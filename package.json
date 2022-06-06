@@ -4,7 +4,9 @@
   "description": "This is a plugin for Obsidian (https://obsidian.md) that allows for easy access to your Pocket (https://getpocket.com) list.",
   "main": "main.js",
   "scripts": {
+    "predev": "npm install",
     "dev": "rollup --config rollup.config.js -w --environment BUILD:dev",
+    "prebuild": "npm install && npm run test && npm audit",
     "build": "rollup --config rollup.config.js --environment BUILD:prod",
     "test": "jest"
   },
